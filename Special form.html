@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Message Mayank</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #eef2ff, #dbeafe);
+            min-height: 100vh;
+            color: #1f2937;
+            padding: 25px 15px;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .form-card {
+            background: white;
+            border-radius: 18px;
+            padding: 35px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            color: #2563eb;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            color: #6b7280;
+            font-size: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #374151;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: inherit;
+            outline: none;
+            transition: 0.2s;
+            background: #f9fafb;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        input[type="tel"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #2563eb;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 14px;
+        }
+
+        .radio-option,
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+
+        .radio-option:last-child,
+        .checkbox-option:last-child {
+            margin-bottom: 0;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: 17px;
+            height: 17px;
+            accent-color: #2563eb;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: #2563eb;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .submit-button:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+        }
+
+        .submit-button:active {
+            transform: translateY(0);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 22px;
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        /* Mobile-friendly design */
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+
+            .form-card {
+                padding: 22px 18px;
+                border-radius: 14px;
+            }
+
+            .header h1 {
+                font-size: 26px;
+            }
+
+            .header p {
+                font-size: 14px;
+            }
+
+            input[type="text"],
+            input[type="number"],
+            input[type="tel"],
+            select,
+            textarea {
+                font-size: 16px;
+            }
+
+            .submit-button {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="form-card">
+
+            <div class="header">
+                <h1>🎮 Message Mayank</h1>
+                <p>Tell me about yourself, your games, and what you think!</p>
+            </div>
+
+            <form action="https://formspree.io/f/mgawkzgr" method="POST">
+
+                <!-- NAME -->
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your name"
+                        required>
+                </div>
+
+                <!-- AGE -->
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input
+                        type="number"
+                        id="age"
+                        name="age"
+                        placeholder="Enter your age"
+                        min="1"
+                        max="120"
+                        required>
+                </div>
+
+                <!-- GENDER -->
+                <div class="form-group">
+
+                    <label>Gender</label>
+
+                    <div class="radio-group">
+
+                        <label class="radio-option">
+                            <input
+                                type="radio"
+                                name="gender"
+                                value="Male"
+                                required>
+                            Male
+                        </label>
+
+                        <label class="radio-option">
+                            <input
+                                type="radio"
+                                name="gender"
+                                value="Female">
+                            Female
+                        </label>
+
+                        <label class="radio-option">
+                            <input
+                                type="radio"
+                                name="gender"
+                                value="Other">
+                            Other
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <!-- MOBILE NUMBER -->
+                <div class="form-group">
+                    <label for="mobile">Mobile No.</label>
+
+                    <input
+                        type="tel"
+                        id="mobile"
+                        name="mobile"
+                        placeholder="Enter your mobile number"
+                        inputmode="tel">
+                </div>
+
+                <!-- FAVOURITE GAME -->
+                <div class="form-group">
+
+                    <label for="favorite-game">Favourite Game</label>
+
+                    <select
+                        id="favorite-game"
+                        name="favorite_game"
+                        required>
+
+                        <option value="">Select your favourite game</option>
+
+                        <option value="Roblox">Roblox</option>
+
+                        <option value="FC">
+                            FC
+                        </option>
+
+                        <option value="PS5 or PS Games">
+                            PS5 or PS Games
+                        </option>
+
+                        <option value="Call of duty">
+                            Call of duty
+                        </option>
+
+                        <option value="Blox Fruits">
+                            Blox Fruits
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- MESSAGE TO MAYANK -->
+                <div class="form-group">
+
+                    <label for="message">
+                        WHAT YOU WILL SAY TO MAYANK??
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        cols="30"
+                        placeholder="Write your message to Mayank..."
+                        required></textarea>
+
+                </div>
+
+                <!-- GAME ACTIVITY -->
+                <div class="form-group">
+
+                    <label>
+                        What would you like to do?
+                    </label>
+
+                    <div class="checkbox-group">
+
+                        <label class="checkbox-option">
+                            <input
+                                type="checkbox"
+                                name="activity"
+                                value="Develop a game">
+                            Develop a game
+                        </label>
+
+                        <label class="checkbox-option">
+                            <input
+                                type="checkbox"
+                                name="activity"
+                                value="Play a game">
+                            Play a game
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <!-- MORE GAMES -->
+                <div class="form-group">
+
+                    <label for="more-games">
+                        More games you know
+                    </label>
+
+                    <textarea
+                        id="more-games"
+                        name="more_games"
+                        rows="6"
+                        cols="31"
+                        placeholder="Tell me about more games you know..."></textarea>
+
+                </div>
+
+                <!-- SUBMIT -->
+                <button
+                    type="submit"
+                    class="submit-button">
+                    Send to Mayank 🚀
+                </button>
+
+            </form>
+
+        </div>
+
+        <footer>
+            Created by Mayank
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
